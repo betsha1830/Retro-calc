@@ -9,11 +9,12 @@ const answerField = document.querySelector('.answer');
 
 let array = [];
 let num1 = 0, num2 = 0;
+let op = '';
 
 numbers.forEach(number => {
     number.addEventListener('click', () => {
         array.push(number.innerText);
-        console.log(array, num1)
+        console.log(array, num1, op)
     })
 })
 
@@ -29,7 +30,7 @@ decimal.addEventListener('click', () => {
     
 })
 
-//Assign the first value to be processed to num1
+//Assign the first value to num1 to be processed
 
 operators.forEach(operator => {
     operator.addEventListener('click', () => {
@@ -38,8 +39,18 @@ operators.forEach(operator => {
         }
         if (num1 == 0) {
             num1 = array.splice(0, array.length);
+            op = operator.innerText;
         }
         
     })
 })
+
+//Clear functionality
+
+clear.addEventListener('click', () => {
+    array.splice(0, array.length)
+    num1 = 0, num2 = 0;
+})
+
+
 

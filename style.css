@@ -60,7 +60,8 @@ p {
     margin: auto;
     min-height: 550px;
     background-color: #FE5F55;
-    border-radius: 5px;
+    border-radius: 15px;
+    box-shadow: 17px 14px 16px rgba(0, 0, 0, 0.25);
 }
 
 .row {
@@ -74,7 +75,7 @@ p {
     height: 65px;
     font-weight: 500;
     font-size: 32px;
-    border-radius: 5px;
+    border-radius: 10px;
     margin: 10px 0 10px 0;
     display: flex;
     justify-content: center;
@@ -87,5 +88,5 @@ p {
 }
 
 .button, .output {
-    box-shadow: 9px 9px #0000 0;
+    box-shadow: 9px 9px 11px rgba(0, 0, 0, 0.25);
 }

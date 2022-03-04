@@ -13,9 +13,11 @@ let num1 = 0, num2 = 0;
 numbers.forEach(number => {
     number.addEventListener('click', () => {
         array.push(number.innerText);
-        console.log(array)
+        console.log(array, num1)
     })
 })
+
+//Add decimal place
 
 decimal.addEventListener('click', () => {
     for (let i = 0; i < array.length; i++) {
@@ -23,8 +25,21 @@ decimal.addEventListener('click', () => {
             return
         }
     }
-
     array.push(decimal.innerText);
     
+})
+
+//Assign the first value to be processed to num1
+
+operators.forEach(operator => {
+    operator.addEventListener('click', () => {
+        if (array.length == 0 || array[length-1] == operator) {
+            return
+        }
+        if (num1 == 0) {
+            num1 = array.splice(0, array.length);
+        }
+        
+    })
 })
 

@@ -50,6 +50,7 @@ operators.forEach(operator => {
 clear.addEventListener('click', () => {
     array.splice(0, array.length)
     num1 = 0, num2 = 0;
+    op = '';
 })
 
 

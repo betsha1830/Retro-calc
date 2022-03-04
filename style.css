@@ -83,6 +83,10 @@ p {
     color: #EEF5DB;
 }
 
+.button:hover {
+    cursor: pointer;
+}
+
 .size-2 {
     width: 100px;
 }

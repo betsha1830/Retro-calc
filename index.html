@@ -6,35 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retro Calculator</title>
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&display=swap" rel="stylesheet">
+
     <script src="script.js" defer></script>
+
 </head>
 <body>
-    <div class="board">
+    <div class="board container">
+        <p>CALCULATOR</p>
         <div class="calculator">
-            <div class="output">
-                <div class="expression"></div>
-                <div class="answer"></div>
+            <div class="output align">
+                <div class="answer">0</div>
+                <div class="expression">Expression</div>
             </div>
-            <div class="buttons">
-                <button class="clear">Clear</button>
-                <button class="backspace"></button>
-                <button class="division">/</button>
-                <button class="7">7</button>
-                <button class="8">8</button>
-                <button class="9">9</button>
-                <button class="x">x</button>
-                <button class="4">4</button>
-                <button class="5">5</button>
-                <button class="6">6</button>
-                <button class="-">-</button>
-                <button class="1">1</button>
-                <button class="2">2</button>
-                <button class="3">3</button>
-                <button class="+">+</button>
-                <button class="0">0</button>
-                <button class=".">.</button>
-                <button class="=">=</button>
-            </div>
+            <div class="buttons align">
+                <div class="row one">
+                    <div class="button clear">Clear</div>
+                    <div class="button backspace"> <img src="Group 20.png" alt=""> </div>
+                    <div class="button size-2 division">/</div>
+                </div>
+                <div class="row two">
+                    <div class="button size-2 7">7</div>
+                    <div class="button size-2 8">8</div>
+                    <div class="button size-2 9">9</div>
+                    <div class="button size-2 x">x</div>
+                </div>
+                <div class="row three">
+                    <div class="button size-2 4">4</div>
+                    <div class="button size-2 5">5</div>
+                    <div class="button size-2 6">6</div>
+                    <div class="button size-2 -">-</div>
+                </div> 
+                <div class="row four">
+                    <div class="button size-2 1">1</div>
+                    <div class="button size-2 2">2</div>
+                    <div class="button size-2 3">3</div>
+                    <div class="button size-2 +">+</div>
+                </div>
+                <div class="row five">
+                    <div class="button 0">0</div>
+                    <div class="button size-2 .">.</div>
+                    <div class="button =">=</div>
+                </div>
+            </div> 
         </div>
     </div>
 </body>

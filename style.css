@@ -1,0 +1,91 @@
+body {
+    background: linear-gradient(to bottom right, #3ED1FF, #A92C6C);
+    height: 100vh;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.answer {
+    font-size: 34px;
+    margin-right: 16px;
+}
+
+.expression {
+    font-size: 24px;
+    margin-right: 16px;
+}
+
+.board {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    justify-content: space-between;
+}
+
+.output {
+    background-color: #584D3D;
+    color: #EEF5DB;
+    border-radius: 5px;
+    height: 85px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    justify-content: space-around;
+    margin-top: 8px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+}
+
+.align {
+    width: 90%;
+    margin: auto;
+}
+
+p {
+    font-weight: 600;
+    font-size: 45px;
+    text-align: center;
+    margin: 10px 0 10px 0;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    min-width: 490px;
+    margin: auto;
+    min-height: 550px;
+    background-color: #FE5F55;
+    border-radius: 5px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    background-color: #584D3D;
+    width: 140px;
+    height: 65px;
+    font-weight: 500;
+    font-size: 32px;
+    border-radius: 5px;
+    margin: 10px 0 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #EEF5DB;
+}
+
+.size-2 {
+    width: 100px;
+}
+
+.button, .output {
+    box-shadow: 9px 9px #0000 0;
+}

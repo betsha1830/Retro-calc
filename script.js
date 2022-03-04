@@ -15,7 +15,6 @@ let result = 0;
 numbers.forEach(number => {
     number.addEventListener('click', () => {
         array.push(number.innerText);
-        console.log(array, num1, op)
     })
 })
 
@@ -27,7 +26,6 @@ decimal.addEventListener('click', () => {
             return
         }
     }
-    console.log(array, num1, op)
     array.push(decimal.innerText);
     
 })
@@ -42,9 +40,7 @@ operators.forEach(operator => {
         if (num1 == '') {
             num1 = array.splice(0, array.length);
             op = operator.innerText;
-            console.log(array, num1, op)
         }
-        
     })
 })
 
@@ -54,7 +50,7 @@ clearButton.addEventListener('click', () => {
     array.splice(0, array.length)
     num1 = '', num2 = '';
     op = '';
-    console.log(array, num1, op)
+    result = ''
 })
 
 //Backspace button functionality
@@ -73,7 +69,6 @@ backSpaceButton.addEventListener('click', () => {
     else if (op != '') {
         array.pop();
     }
-    console.log(array, num1, op)
 })
 
 //Equal button functionality (Do the desired computation)
@@ -85,7 +80,6 @@ equalButton.addEventListener('click', () => {
     }
 
     num2 = array.splice(0, array.length);
-    console.log(num1, num2);
 
     for (let i = 0; i < num1.length; i++) {
         temp += num1[i];
@@ -115,6 +109,13 @@ equalButton.addEventListener('click', () => {
     }
     else result = num1 * num2;
 
-    console.log(result)
+    answerField.innerText = result;
+
+})
+
+//Print on Expression field
+
+window.addEventListener('click', () => {
+    expressionField.innerText = `${num1} ${op} ${num2}`;
 
 })

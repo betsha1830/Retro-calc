@@ -12,7 +12,7 @@ let num1 = '', num2 = '', temp = '';
 let op = '';
 let result = 0;
 
-numbers.forEach(number => {
+let num = numbers.forEach(number => {
     number.addEventListener('click', () => {
         array.push(number.innerText);
     })
@@ -20,7 +20,7 @@ numbers.forEach(number => {
 
 //Add decimal place
 
-decimal.addEventListener('click', () => {
+let deci = decimal.addEventListener('click', () => {
     for (let i = 0; i < array.length; i++) {
         if (array[i] == '.') {
             return
@@ -32,7 +32,7 @@ decimal.addEventListener('click', () => {
 
 //Assign the first value to num1 to be processed
 
-operators.forEach(operator => {
+let ops = operators.forEach(operator => {
     operator.addEventListener('click', () => {
         if (array.length == 0 || array[length-1] == operator) {
             return
@@ -40,22 +40,25 @@ operators.forEach(operator => {
         if (num1 == '') {
             num1 = array.splice(0, array.length);
             op = operator.innerText;
+            expressionField.innerText += op;
         }
     })
 })
 
 //Clear button functionality
 
-clearButton.addEventListener('click', () => {
+let clear = clearButton.addEventListener('click', () => {
     array.splice(0, array.length)
     num1 = '', num2 = '';
     op = '';
     result = ''
+    answerField.innerText = 0;
+    expressionField.innerText = ''
 })
 
 //Backspace button functionality
 
-backSpaceButton.addEventListener('click', () => {
+let backsapce = backSpaceButton.addEventListener('click', () => {
     if (array.length != 0) {
         array.pop();
     }
@@ -73,7 +76,7 @@ backSpaceButton.addEventListener('click', () => {
 
 //Equal button functionality (Do the desired computation)
 
-equalButton.addEventListener('click', () => {
+let equal = equalButton.addEventListener('click', () => {
 
     if (array.length == 0) {
         return
@@ -116,6 +119,20 @@ equalButton.addEventListener('click', () => {
 //Print on Expression field
 
 window.addEventListener('click', () => {
-    expressionField.innerText = `${num1} ${op} ${num2}`;
 
+    if(array[array.length -1 ] != undefined) {
+        expressionField.innerText += array[array.length-1];
+    }
+
+    let junk;
+
+    if (result != '' && array.length != 0) {
+        array.splice(0, array.length)
+        num1 = '', num2 = '';
+        op = '';
+        result = ''
+        answerField.innerText = 0;
+        expressionField.innerText = ''
+    }
+        
 })

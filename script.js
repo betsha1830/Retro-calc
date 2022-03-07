@@ -41,6 +41,7 @@ let ops = operators.forEach(operator => {
             num1 = array.splice(0, array.length);
             op = operator.innerText;
             expressionField.innerText += op;
+            
         }
     })
 })
@@ -130,16 +131,23 @@ let equal = equalButton.addEventListener('click', () => {
     }
     else result = num1 * num2;
 
+    result = Math.floor(result);
+
     answerField.innerText = result;
 
 })
 
 //Print on Expression field
 
+let previousArrayLength = -1;
+
 window.addEventListener('click', () => {
 
-    if(array[array.length -1 ] != undefined) {
+    // Need to check if the array has changed or not. If it didn't no change should occur on the expression field.
+
+    if(array[array.length-1] != undefined) {
         expressionField.innerText += array[array.length-1];
+        previousArrayLength = array.length;
     }
 
     let junk;

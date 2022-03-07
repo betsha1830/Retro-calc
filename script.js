@@ -131,8 +131,6 @@ let equal = equalButton.addEventListener('click', () => {
     }
     else result = num1 * num2;
 
-    result = Math.floor(result);
-
     answerField.innerText = result;
 
 })

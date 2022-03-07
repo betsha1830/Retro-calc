@@ -72,6 +72,24 @@ let backsapce = backSpaceButton.addEventListener('click', () => {
     else if (op != '') {
         array.pop();
     }
+
+    let expression = expressionField.innerText;
+    let expTemp = '', exp = '';
+
+    for (let i = 0; i < expression.length-2; i++) {
+        expTemp += expression[i];
+        
+        if (op != '' && array.length == 1) {
+            expTemp += op;
+        }
+
+    }
+    
+    exp = expTemp;
+    expressionField.innerText = exp;
+    exp = ''
+    expTemp ='';
+
 })
 
 //Equal button functionality (Do the desired computation)

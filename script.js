@@ -29,6 +29,8 @@ let num = numbers.forEach(number => {
     number.addEventListener('click', () => {
         array.push(number.innerText);
 
+        console.log(array, num1);
+
         fieldArray.push(number.innerText);
 
         printExpression();
@@ -55,9 +57,22 @@ let deci = decimal.addEventListener('click', () => {
 
 let ops = operators.forEach(operator => {
     operator.addEventListener('click', () => {
+
+        if (result != '') {
+           
+            num1 = result;
+            op = operator.innerText;
+            fieldArray.push(num1);
+            fieldArray.push(op);
+
+            printExpression();
+
+        }
+
         if (array.length == 0 || array[length-1] == operator) {
             return
         }
+
         if (num1 == '') {
             num1 = array.splice(0, array.length);
             op = operator.innerText;
@@ -66,7 +81,7 @@ let ops = operators.forEach(operator => {
 
             printExpression();
             
-        }
+        }     
         
         
     })
@@ -123,12 +138,18 @@ let equal = equalButton.addEventListener('click', () => {
 
     num2 = array.splice(0, array.length);
 
-    for (let i = 0; i < num1.length; i++) {
-        temp += num1[i];
+    console.log(typeof(num1));
+
+    if (typeof(num1) != 'number') {
+        for (let i = 0; i < num1.length; i++) {
+            temp += num1[i];
+        }
+
+        num1 = '';
+        num1 = temp;
+        temp = '';
     }
-    num1 = '';
-    num1 = temp;
-    temp = ''
+    
 
     for (let i = 0; i < num2.length; i++) {
         temp += (num2[i]);
@@ -155,7 +176,6 @@ let equal = equalButton.addEventListener('click', () => {
     
     num1 = '', num2 = '';
     op = '';
-    result = ''
     expression = '';
     expressionField.innerText = '';
     fieldArray = [];

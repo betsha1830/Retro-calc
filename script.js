@@ -155,29 +155,3 @@ let equal = equalButton.addEventListener('click', () => {
     
 
 })
-
-//Print on Expression field
-
-// let previousArrayLength = -1;
-
-// window.addEventListener('click', () => {
-
-//     // Need to check if the array has changed or not. If it didn't no change should occur on the expression field.
-
-//     if(array[array.length-1] != undefined) {
-//         expressionField.innerText += array[array.length-1];
-//         previousArrayLength = array.length;
-//     }
-
-//     let junk;
-
-//     if (result != '' && array.length != 0) {
-//         array.splice(0, array.length)
-//         num1 = '', num2 = '';
-//         op = '';
-//         result = ''
-//         answerField.innerText = 0;
-//         expressionField.innerText = ''
-//     }
-        
-// })

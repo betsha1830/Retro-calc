@@ -153,5 +153,11 @@ let equal = equalButton.addEventListener('click', () => {
 
     answerField.innerText = result;
     
+    num1 = '', num2 = '';
+    op = '';
+    result = ''
+    expression = '';
+    expressionField.innerText = '';
+    fieldArray = [];
 
 })

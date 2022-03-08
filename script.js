@@ -7,14 +7,31 @@ const equalButton = document.querySelector('.equals');
 const expressionField = document.querySelector('.expression');
 const answerField = document.querySelector('.answer');
 
-let array = [];
-let num1 = '', num2 = '', temp = '';
+let array = [], fieldArray = []; // This will be used to store the expression for the expression field.
+let num1 = '', num2 = '', temp = ''; // temp is used to copy from variable to another.
 let op = '';
 let result = 0;
+let expression = ''; // To store the expression that is suppose to be printed for the user.
+
+function printExpression () {
+
+    expression = '';
+
+    for (let item in fieldArray) {
+        expression += fieldArray[item];
+    }
+
+    expressionField.innerText = expression;
+}
+
 
 let num = numbers.forEach(number => {
     number.addEventListener('click', () => {
         array.push(number.innerText);
+
+        fieldArray.push(number.innerText);
+
+        printExpression();
     })
 })
 
@@ -28,6 +45,10 @@ let deci = decimal.addEventListener('click', () => {
     }
     array.push(decimal.innerText);
     
+    fieldArray.push(decimal.innerText);
+
+    printExpression();
+    
 })
 
 //Assign the first value to num1 to be processed
@@ -40,9 +61,14 @@ let ops = operators.forEach(operator => {
         if (num1 == '') {
             num1 = array.splice(0, array.length);
             op = operator.innerText;
-            expressionField.innerText += op;
+            
+            fieldArray.push(operator.innerText);
+
+            printExpression();
             
         }
+        
+        
     })
 })
 
@@ -54,7 +80,9 @@ let clear = clearButton.addEventListener('click', () => {
     op = '';
     result = ''
     answerField.innerText = 0;
-    expressionField.innerText = ''
+    expression = '';
+    expressionField.innerText = '';
+    fieldArray = [];
 })
 
 //Backspace button functionality
@@ -62,34 +90,26 @@ let clear = clearButton.addEventListener('click', () => {
 let backsapce = backSpaceButton.addEventListener('click', () => {
     if (array.length != 0) {
         array.pop();
+        fieldArray.pop();
+
+        printExpression();
     }
     else if (num1 != '') {
-        op = ''
+        op = '';
+        fieldArray.pop();
+        printExpression();
         for (let values of num1) {
-            array.push(values) 
+            array.push(values);
         }
-        num1 = ''
+        num1 = '';
     }
     else if (op != '') {
         array.pop();
-    }
+        fieldArray.pop();
 
-    let expression = expressionField.innerText;
-    let expTemp = '', exp = '';
-
-    for (let i = 0; i < expression.length-2; i++) {
-        expTemp += expression[i];
-        
-        if (op != '' && array.length == 1) {
-            expTemp += op;
-        }
-
-    }
+        printExpression();
+    }    
     
-    exp = expTemp;
-    expressionField.innerText = exp;
-    exp = ''
-    expTemp ='';
 
 })
 
@@ -132,31 +152,32 @@ let equal = equalButton.addEventListener('click', () => {
     else result = num1 * num2;
 
     answerField.innerText = result;
+    
 
 })
 
 //Print on Expression field
 
-let previousArrayLength = -1;
+// let previousArrayLength = -1;
 
-window.addEventListener('click', () => {
+// window.addEventListener('click', () => {
 
-    // Need to check if the array has changed or not. If it didn't no change should occur on the expression field.
+//     // Need to check if the array has changed or not. If it didn't no change should occur on the expression field.
 
-    if(array[array.length-1] != undefined) {
-        expressionField.innerText += array[array.length-1];
-        previousArrayLength = array.length;
-    }
+//     if(array[array.length-1] != undefined) {
+//         expressionField.innerText += array[array.length-1];
+//         previousArrayLength = array.length;
+//     }
 
-    let junk;
+//     let junk;
 
-    if (result != '' && array.length != 0) {
-        array.splice(0, array.length)
-        num1 = '', num2 = '';
-        op = '';
-        result = ''
-        answerField.innerText = 0;
-        expressionField.innerText = ''
-    }
+//     if (result != '' && array.length != 0) {
+//         array.splice(0, array.length)
+//         num1 = '', num2 = '';
+//         op = '';
+//         result = ''
+//         answerField.innerText = 0;
+//         expressionField.innerText = ''
+//     }
         
-})
+// })

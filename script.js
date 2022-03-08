@@ -29,8 +29,6 @@ let num = numbers.forEach(number => {
     number.addEventListener('click', () => {
         array.push(number.innerText);
 
-        console.log(array, num1);
-
         fieldArray.push(number.innerText);
 
         printExpression();
@@ -137,8 +135,6 @@ let equal = equalButton.addEventListener('click', () => {
     }
 
     num2 = array.splice(0, array.length);
-
-    console.log(typeof(num1));
 
     if (typeof(num1) != 'number') {
         for (let i = 0; i < num1.length; i++) {

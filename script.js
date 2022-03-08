@@ -27,20 +27,9 @@ function printExpression () {
 
 let num = numbers.forEach(number => {
     number.addEventListener('click', () => {
-
-        if (result != '' && num1 == '') {
-            
-            num1 = '', num2 = '';
-            op = '';
-            result = ''
-            answerField.innerText = 0;
-            expression = '';
-            expressionField.innerText = '';
-            fieldArray = [];
-            
-        }
-
         array.push(number.innerText);
+
+        console.log(array, num1);
 
         fieldArray.push(number.innerText);
 
@@ -71,14 +60,10 @@ let ops = operators.forEach(operator => {
 
         if (result != '') {
            
-            temp = Array.from(String(result));
+            num1 = result;
             op = operator.innerText;
-            result = '';
-            for (let num of temp) {
-                array.push(num);
-                fieldArray.push(num);
-                console.log(fieldArray, op);
-            }
+            fieldArray.push(num1);
+            fieldArray.push(op);
 
             printExpression();
 
@@ -97,6 +82,7 @@ let ops = operators.forEach(operator => {
             printExpression();
             
         }     
+        
         
     })
 })
@@ -127,7 +113,6 @@ let backsapce = backSpaceButton.addEventListener('click', () => {
         op = '';
         fieldArray.pop();
         printExpression();
-        
         for (let values of num1) {
             array.push(values);
         }
@@ -139,6 +124,7 @@ let backsapce = backSpaceButton.addEventListener('click', () => {
 
         printExpression();
     }    
+    
 
 })
 
@@ -152,6 +138,8 @@ let equal = equalButton.addEventListener('click', () => {
 
     num2 = array.splice(0, array.length);
 
+    console.log(typeof(num1));
+
     if (typeof(num1) != 'number') {
         for (let i = 0; i < num1.length; i++) {
             temp += num1[i];
@@ -162,6 +150,7 @@ let equal = equalButton.addEventListener('click', () => {
         temp = '';
     }
     
+
     for (let i = 0; i < num2.length; i++) {
         temp += (num2[i]);
     }

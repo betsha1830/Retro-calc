@@ -27,6 +27,15 @@ function printExpression () {
 
 let num = numbers.forEach(number => {
     number.addEventListener('click', () => {
+        if (result != '') {
+            num1 = '', num2 = '';
+            op = '';
+            result = ''
+            answerField.innerText = 0;
+            expression = '';
+            expressionField.innerText = '';
+            fieldArray = [];
+        }
         array.push(number.innerText);
 
         fieldArray.push(number.innerText);

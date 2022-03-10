@@ -24,17 +24,22 @@ function printExpression () {
     expressionField.innerText = expression;
 }
 
+function clean () {
+
+    num1 = '', num2 = '';
+    op = '';
+    result = ''
+    answerField.innerText = 0;
+    expression = '';
+    expressionField.innerText = '';
+    fieldArray = [];
+
+}
 
 let num = numbers.forEach(number => {
     number.addEventListener('click', () => {
         if (result != '') {
-            num1 = '', num2 = '';
-            op = '';
-            result = ''
-            answerField.innerText = 0;
-            expression = '';
-            expressionField.innerText = '';
-            fieldArray = [];
+            clean();
         }
         array.push(number.innerText);
 
@@ -54,13 +59,7 @@ let deci = decimal.addEventListener('click', () => {
     }
 
     if (result != '') {
-        num1 = '', num2 = '';
-        op = '';
-        result = ''
-        answerField.innerText = 0;
-        expression = '';
-        expressionField.innerText = '';
-        fieldArray = [];
+        clean();
     }
 
     array.push(decimal.innerText);
@@ -110,13 +109,7 @@ let ops = operators.forEach(operator => {
 
 let clear = clearButton.addEventListener('click', () => {
     array.splice(0, array.length)
-    num1 = '', num2 = '';
-    op = '';
-    result = ''
-    answerField.innerText = 0;
-    expression = '';
-    expressionField.innerText = '';
-    fieldArray = [];
+    clean();
 })
 
 //Backspace button functionality

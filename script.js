@@ -62,7 +62,7 @@ let deci = decimal.addEventListener('click', () => {
         expressionField.innerText = '';
         fieldArray = [];
     }
-    
+
     array.push(decimal.innerText);
     
     fieldArray.push(decimal.innerText);
@@ -79,6 +79,7 @@ let ops = operators.forEach(operator => {
         if (result != '') {
            
             num1 = result;
+            result = '';
             op = operator.innerText;
             fieldArray.push(num1);
             fieldArray.push(op);

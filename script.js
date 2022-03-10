@@ -81,7 +81,10 @@ let ops = operators.forEach(operator => {
             num1 = result;
             result = '';
             op = operator.innerText;
-            fieldArray.push(num1);
+            num1 = String(num1);
+            for (let i in (num1)) {
+                fieldArray.push(num1[i]);
+            }
             fieldArray.push(op);
 
             printExpression();
@@ -99,10 +102,7 @@ let ops = operators.forEach(operator => {
             fieldArray.push(operator.innerText);
 
             printExpression();
-            
         }     
-        
-        
     })
 })
 
@@ -132,6 +132,7 @@ let backsapce = backSpaceButton.addEventListener('click', () => {
         op = '';
         fieldArray.pop();
         printExpression();
+        num1 = String(num1);
         for (let values of num1) {
             array.push(values);
         }
@@ -144,7 +145,6 @@ let backsapce = backSpaceButton.addEventListener('click', () => {
         printExpression();
     }    
     
-
 })
 
 //Equal button functionality (Do the desired computation)
@@ -166,7 +166,6 @@ let equal = equalButton.addEventListener('click', () => {
         num1 = temp;
         temp = '';
     }
-    
 
     for (let i = 0; i < num2.length; i++) {
         temp += (num2[i]);

@@ -52,6 +52,17 @@ let deci = decimal.addEventListener('click', () => {
             return
         }
     }
+
+    if (result != '') {
+        num1 = '', num2 = '';
+        op = '';
+        result = ''
+        answerField.innerText = 0;
+        expression = '';
+        expressionField.innerText = '';
+        fieldArray = [];
+    }
+    
     array.push(decimal.innerText);
     
     fieldArray.push(decimal.innerText);
